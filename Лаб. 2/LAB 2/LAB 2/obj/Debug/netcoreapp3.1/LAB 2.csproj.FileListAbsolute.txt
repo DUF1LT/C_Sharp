@@ -1,0 +1,13 @@
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\bin\Debug\netcoreapp3.1\LAB 2.exe
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\bin\Debug\netcoreapp3.1\LAB 2.deps.json
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\bin\Debug\netcoreapp3.1\LAB 2.runtimeconfig.json
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\bin\Debug\netcoreapp3.1\LAB 2.runtimeconfig.dev.json
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\bin\Debug\netcoreapp3.1\LAB 2.dll
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\bin\Debug\netcoreapp3.1\LAB 2.pdb
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\obj\Debug\netcoreapp3.1\LAB 2.csprojAssemblyReference.cache
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\obj\Debug\netcoreapp3.1\LAB 2.AssemblyInfoInputs.cache
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\obj\Debug\netcoreapp3.1\LAB 2.AssemblyInfo.cs
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\obj\Debug\netcoreapp3.1\LAB 2.csproj.CoreCompileInputs.cache
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\obj\Debug\netcoreapp3.1\LAB 2.dll
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\obj\Debug\netcoreapp3.1\LAB 2.pdb
+D:\BSTU stuff\3 семестр 2 курс\ООП\Лаб. 2\LAB 2\LAB 2\obj\Debug\netcoreapp3.1\LAB 2.genruntimeconfig.cache
