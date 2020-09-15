@@ -335,24 +335,26 @@ namespace LAB_2
 
             Console.WriteLine();
             
-            void checkedFunc()
+            int checkedFunc()
             {
                checked 
                 {
                     int maxInt = 2147483647;
+                    return maxInt + 1;
                 }
-
+                
             }
-            void uncheckedFunc()
+            int uncheckedFunc()
             {
                 unchecked
                 {
                     int maxInt = 2147483647;
+                    return maxInt + 1;
                 }
             }
 
-            checkedFunc();
-            uncheckedFunc();
+            Console.WriteLine(uncheckedFunc());
+            Console.WriteLine(checkedFunc());
 
         }
     }
