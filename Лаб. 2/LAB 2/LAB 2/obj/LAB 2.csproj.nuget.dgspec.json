@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BSTU stuff\\3 семестр 2 курс\\ООП\\Лаб. 2\\LAB 2\\LAB 2\\LAB 2.csproj": {}
+    "D:\\BSTU stuff\\3 семестр 2 курс\\ООП\\C_Sharp\\Лаб. 2\\LAB 2\\LAB 2\\LAB 2.csproj": {}
   },
   "projects": {
-    "D:\\BSTU stuff\\3 семестр 2 курс\\ООП\\Лаб. 2\\LAB 2\\LAB 2\\LAB 2.csproj": {
+    "D:\\BSTU stuff\\3 семестр 2 курс\\ООП\\C_Sharp\\Лаб. 2\\LAB 2\\LAB 2\\LAB 2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BSTU stuff\\3 семестр 2 курс\\ООП\\Лаб. 2\\LAB 2\\LAB 2\\LAB 2.csproj",
+        "projectUniqueName": "D:\\BSTU stuff\\3 семестр 2 курс\\ООП\\C_Sharp\\Лаб. 2\\LAB 2\\LAB 2\\LAB 2.csproj",
         "projectName": "LAB 2",
-        "projectPath": "D:\\BSTU stuff\\3 семестр 2 курс\\ООП\\Лаб. 2\\LAB 2\\LAB 2\\LAB 2.csproj",
+        "projectPath": "D:\\BSTU stuff\\3 семестр 2 курс\\ООП\\C_Sharp\\Лаб. 2\\LAB 2\\LAB 2\\LAB 2.csproj",
         "packagesPath": "C:\\Users\\Vadim\\.nuget\\packages\\",
-        "outputPath": "D:\\BSTU stuff\\3 семестр 2 курс\\ООП\\Лаб. 2\\LAB 2\\LAB 2\\obj\\",
+        "outputPath": "D:\\BSTU stuff\\3 семестр 2 курс\\ООП\\C_Sharp\\Лаб. 2\\LAB 2\\LAB 2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
