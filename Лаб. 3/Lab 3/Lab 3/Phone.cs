@@ -95,6 +95,10 @@ namespace Lab_3
             {
                 return cityConversationTime;
             }
+            set
+            {
+                cityConversationTime = value;
+            }
         }
         public int Credit
         {
@@ -112,6 +116,17 @@ namespace Lab_3
             get
             {
                 return intercityConversationTime;
+            }
+            set
+            {
+                intercityConversationTime = value;
+            }
+        }
+        public int ID
+        {
+            get
+            {
+                return id;
             }
         }
 
@@ -184,7 +199,7 @@ namespace Lab_3
             + debit + " "
             + credit + " "
             + cityConversationTime + " "
-            + intercityConversationTime + " ";
+            + intercityConversationTime;
         }
     }
 
