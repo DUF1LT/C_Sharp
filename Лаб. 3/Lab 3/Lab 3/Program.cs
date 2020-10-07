@@ -6,6 +6,7 @@ namespace Lab_3
     {
         static void Main(string[] args)
         {
+            Console.Write("Введите количество элементов в массиве объектов: ");
             int anountOfItems = Convert.ToInt32(Console.ReadLine());
             Phone[] phoneArray = new Phone[anountOfItems];
             for(int i = 0; i < anountOfItems; i++)
@@ -30,10 +31,11 @@ namespace Lab_3
                 phoneArray[i].CityConversationTime = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Введите время междугородних разговоров абонента: ");
                 phoneArray[i].InterCityConversationTime = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine();
+                Console.WriteLine();
             }
 
-
-            Console.WriteLine("Сведения об абонентах, у которых время внутригородских разговоров превышает заданное");
+            Console.WriteLine("Сведения об абонентах, у которых время внутригородских разговоров превышает заданное: ");
             foreach(Phone obj in phoneArray)
             {
                 if(obj.CityConversationTime > Phone.conversationTimeLimit)
@@ -52,7 +54,7 @@ namespace Lab_3
                 }
             }
 
-            Console.WriteLine("Сведения об абонентах, которые пользовались междугородней связью");
+            Console.WriteLine("Сведения об абонентах, которые пользовались междугородней связью: ");
             foreach (Phone obj in phoneArray)
             {
                 if (obj.InterCityConversationTime < Phone.conversationTimeLimit)
@@ -71,11 +73,14 @@ namespace Lab_3
                 }
             }
 
+            phoneArray[0].Balance();
+            phoneArray[0].GetHashCode();
+            phoneArray[0].ToString();
             if (anountOfItems > 1)
-                Console.WriteLine($"Объект 1 класса Phone идентичен объекту 2 класса Phone - {phoneArray[1].Equals(phoneArray[2])}");
+                Console.WriteLine($"Объект 1 класса Phone тождественен объекту 2 класса Phone - {phoneArray[0].Equals(phoneArray[1])}");
 
             var user = new { Name = "Vadim", Age = "18" };
-            Console.WriteLine($"Имя из анонимного типа - {user.Name}, возраст из анонимного типа {user.Age}");
+            Console.WriteLine($"Имя из анонимного типа - {user.Name}, возраст из анонимного типа - {user.Age}");
         }
     }
 }

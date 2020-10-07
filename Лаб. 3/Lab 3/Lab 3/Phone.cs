@@ -184,7 +184,7 @@ namespace Lab_3
         public override int GetHashCode()
         {
             int hash = this.id;
-            hash = (hash * 47) + this.GetHashCode();
+            hash = (hash * 47) / 2;
             return hash;
         }
         public override string ToString()
