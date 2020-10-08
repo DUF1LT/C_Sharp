@@ -18,6 +18,15 @@ namespace Lab_4
             SelfCheck();
         }
 
+
+        public int this[int i]
+        {
+            get
+            {
+                if (i >= 0 && i < elements.Length) return elements[i];
+                else return 0;
+            }
+        }
         public void SelfCheck()
         {
             bool isChanged = false;
