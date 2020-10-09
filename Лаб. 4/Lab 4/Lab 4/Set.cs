@@ -14,10 +14,10 @@ namespace Lab_4
         }
         public Set(int[] array)
         {
-            elements = array;
+            elements = new int[array.Length];
+            array.CopyTo(elements, 0);
             SelfCheck();
         }
-
 
         public int this[int i]
         {
@@ -36,16 +36,30 @@ namespace Lab_4
                 {
                     if(elements[i] == elements[j])
                     {
-                        int addVar = elements[elements.Length - 1];
-                        elements[elements.Length - 1] = elements[j];
-                        elements[j] = elements[elements.Length - 1];
+                        int addVar = elements[^1]; // ^ = 'elements.Length -'
+                        elements[^1] = elements[j];
+                        elements[j] = addVar;
                         Array.Resize<int>(ref elements, elements.Length - 1);
+                       
                         isChanged = true;
                     }
                 }
             }
-            if (isChanged) Console.WriteLine($"Обнаружены повторяющиеся элементы в множестве.\n Множество изменено");
-            else Console.WriteLine("Множество корректно");
+            Array.Sort(elements);
+            if (isChanged)
+            {
+                Console.WriteLine($"~Обнаружены повторяющиеся элементы в множестве\n!!Множество изменено!!");
+                ShowSet();
+            }
+        }
+
+        public void ShowSet()
+        {
+            for (int i = 0; i < elements.Length; i++)
+            {
+                Console.Write(this.elements[i] + " ");
+            }
+            Console.WriteLine();
         }
 
         public static bool operator >(int[] numbers, Set obj)
@@ -83,10 +97,10 @@ namespace Lab_4
                     }
                 }
             }
-            if (matches == obj.elements.Length) return true;
+            if (matches == subset.Length) return true;
             else return false;
         }
-        public static int[] operator *(Set obj1, Set obj2)
+        public static Set operator *(Set obj1, Set obj2)
         {
             int crossedLenght;
             int crossedPos = 0;
@@ -94,10 +108,9 @@ namespace Lab_4
                 crossedLenght = obj1.elements.Length;
             else
                 crossedLenght = obj2.elements.Length;
-
             int[] crossedElements = new int[crossedLenght];
 
-            foreach(int obj1el in obj1.elements)
+            foreach (int obj1el in obj1.elements)
             {
                 foreach (int obj2el in obj2.elements)
                 {
@@ -108,8 +121,10 @@ namespace Lab_4
                     }
                 }
             }
-            Array.Resize<int>(ref crossedElements, crossedPos + 1);
-            return crossedElements;
+
+            Array.Resize<int>(ref crossedElements, crossedPos);
+            Set crossedSet = new Set(crossedElements);
+            return crossedSet;
         }
     }
 }
