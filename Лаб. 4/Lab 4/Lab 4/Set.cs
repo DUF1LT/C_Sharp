@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Lab_4
 {
-    internal class Set
+    class Set
     {
-        private int[] elements;
+        internal int[] elements;
 
         public Set()
         {
@@ -161,45 +161,73 @@ namespace Lab_4
 
             }
         }
+    }
 
-        static class StaticOperation
+    static class StaticOperation
+    {
+        public static int FirstNum(this String str)
         {
-            
-
-            public static int Summ(Set set)
+            string[] elements = str.Split(' ');
+            int res;
+            for (int i = 0; i < elements.Length; i++)
             {
-                int summ = 0;
-                foreach (int el in set.elements)
-                {
-                    summ += el;
-                }
-                return summ;
+                if (Int32.TryParse(elements[i], out res)) return Convert.ToInt32(elements[i]);
+                else continue;
             }
-
-            public static int MaxMinDiff(Set set)
-            {
-                int max = 0;
-                int min = set.elements[0];
-                foreach(int el in set.elements)
-                {
-                    if (el > max) max = el;
-                    if (el < min) min = el;
-                }
-
-                return (max - min);
-            }
-
-            public static int ElementsAmount(Set set)
-            {
-                int amount = 0;
-                foreach(int el in set.elements)
-                {
-                    amount++;
-                }
-                return amount;
-            }
-
-            
+            return 0;
         }
+
+        public static bool DeletePositive(this Set set)
+        {
+            int addVar;
+            bool deletedOnce = false;
+            for(int i = 0; i < set.elements.Length; i++)
+            {
+                if(set.elements[i] >= 0)
+                {
+                    deletedOnce = true;
+                    addVar = set.elements[i];
+                    set.elements[i] = set.elements[set.elements.Length - 1];
+                    set.elements[set.elements.Length - 1] = addVar;
+                    Array.Resize<int>(ref set.elements, set.elements.Length - 1);
+                }
+            }
+            return deletedOnce;
+        }
+
+        public static int Summ(Set set)
+        {
+            int summ = 0;
+            foreach (int el in set.elements)
+            {
+                summ += el;
+            }
+            return summ;
+        }
+
+        public static int MaxMinDiff(Set set)
+        {
+            int max = 0;
+            int min = set.elements[0];
+            foreach (int el in set.elements)
+            {
+                if (el > max) max = el;
+                if (el < min) min = el;
+            }
+
+            return (max - min);
+        }
+
+        public static int ElementsAmount(Set set)
+        {
+            int amount = 0;
+            foreach (int el in set.elements)
+            {
+                amount++;
+            }
+            return amount;
+        }
+
+
     }
 }
