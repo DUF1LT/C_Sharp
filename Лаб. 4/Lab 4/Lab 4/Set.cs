@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab_4
 {
-    class Set
+    internal class Set
     {
         private int[] elements;
 
@@ -144,8 +144,62 @@ namespace Lab_4
             {
                 return $"ID владельца - {Id},\nИмя владельца - {Name},\nОрганизация - {Organisation} ";
             }
+
+        }
+        public class Date
+        {
+            private int Day { get; }
+            private int Month { get; }
+            private int Year { get; }
+
+            public Date()
+            {
+                DateTime date = DateTime.Now;
+                Day = date.Day;
+                Month = date.Month;
+                Year = date.Year;
+
+            }
         }
 
-       
+        static class StaticOperation
+        {
+            
+
+            public static int Summ(Set set)
+            {
+                int summ = 0;
+                foreach (int el in set.elements)
+                {
+                    summ += el;
+                }
+                return summ;
+            }
+
+            public static int MaxMinDiff(Set set)
+            {
+                int max = 0;
+                int min = set.elements[0];
+                foreach(int el in set.elements)
+                {
+                    if (el > max) max = el;
+                    if (el < min) min = el;
+                }
+
+                return (max - min);
+            }
+
+            public static int ElementsAmount(Set set)
+            {
+                int amount = 0;
+                foreach(int el in set.elements)
+                {
+                    amount++;
+                }
+                return amount;
+            }
+
+            
+        }
     }
 }

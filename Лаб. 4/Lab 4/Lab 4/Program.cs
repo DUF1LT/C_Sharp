@@ -131,10 +131,10 @@ namespace Lab_4
             Set crossedSet = firstSet * secondSet;
             crossedSet.ShowSet();
 
-            Set.Owner firstset.Own = new Set.Owner("124124","Vadim","BSTU");
+            Set.Owner firstsetOwner = new Set.Owner("124124", "Vadim", "BSTU");
+            firstsetOwner.ToString();   
 
-            
-            
+
         }
     }
 }
