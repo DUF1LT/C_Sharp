@@ -127,10 +127,14 @@ namespace Lab_4
                 }
             } while (!exit);
 
-
             Console.WriteLine("\nПересечение двух введенных множеств: ");
             Set crossedSet = firstSet * secondSet;
             crossedSet.ShowSet();
+
+            Set.Owner firstset.Own = new Set.Owner("124124","Vadim","BSTU");
+
+            
+            
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Lab_4
     {
         private int[] elements;
 
-        public Set() 
+        public Set()
         {
             elements = new int[] { 1, 2, 3, 4, 5 };
         }
@@ -30,17 +30,17 @@ namespace Lab_4
         public void SelfCheck()
         {
             bool isChanged = false;
-            for(int i = 0; i < elements.Length; i++)
+            for (int i = 0; i < elements.Length; i++)
             {
-                for(int j = i + 1; j < elements.Length; j++)
+                for (int j = i + 1; j < elements.Length; j++)
                 {
-                    if(elements[i] == elements[j])
+                    if (elements[i] == elements[j])
                     {
                         int addVar = elements[^1]; // ^ = 'elements.Length -'
                         elements[^1] = elements[j];
                         elements[j] = addVar;
                         Array.Resize<int>(ref elements, elements.Length - 1);
-                       
+
                         isChanged = true;
                     }
                 }
@@ -86,7 +86,7 @@ namespace Lab_4
         public static bool operator <(int[] subset, Set obj)
         {
             int matches = 0;
-            foreach(int elInSubset in subset)
+            foreach (int elInSubset in subset)
             {
                 foreach (int elInObj in obj.elements)
                 {
@@ -114,7 +114,7 @@ namespace Lab_4
             {
                 foreach (int obj2el in obj2.elements)
                 {
-                    if(obj1el == obj2el)
+                    if (obj1el == obj2el)
                     {
                         crossedElements[crossedPos++] = obj1el;
                         break;
@@ -126,5 +126,26 @@ namespace Lab_4
             Set crossedSet = new Set(crossedElements);
             return crossedSet;
         }
+
+        public class Owner
+        {
+            private string Id { get; }
+            private string Name {get; }
+            private string Organisation { get; }
+            
+            public Owner(string id, string name, string organisation)
+            {
+                Id = id;
+                Name = name;
+                Organisation = organisation;
+            }
+
+            public override string ToString()
+            {
+                return $"ID владельца - {Id},\nИмя владельца - {Name},\nОрганизация - {Organisation} ";
+            }
+        }
+
+       
     }
 }
