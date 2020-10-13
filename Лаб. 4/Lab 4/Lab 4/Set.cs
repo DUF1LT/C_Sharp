@@ -7,16 +7,21 @@ namespace Lab_4
     class Set
     {
         internal int[] elements;
-
+        public Owner SetOwner;
+        public Date SetDate;
         public Set()
         {
             elements = new int[] { 1, 2, 3, 4, 5 };
+            SetOwner = new Owner();
+            SetDate = new Date();
         }
         public Set(int[] array)
         {
             elements = new int[array.Length];
             array.CopyTo(elements, 0);
             SelfCheck();
+            SetOwner = new Owner();
+            SetDate = new Date();
         }
 
         public int this[int i]
@@ -127,17 +132,23 @@ namespace Lab_4
             return crossedSet;
         }
 
-        public class Owner
+       
+        internal class Owner
         {
+
             private string Id { get; }
             private string Name {get; }
             private string Organisation { get; }
-            
-            public Owner(string id, string name, string organisation)
+
+
+            public Owner()
             {
-                Id = id;
-                Name = name;
-                Organisation = organisation;
+                Console.WriteLine("Введите ID создателя объекта: ");
+                Id = Console.ReadLine();
+                Console.WriteLine("Введите имя создателя объекта: ");
+                Name = Console.ReadLine();
+                Console.WriteLine("Введите название организации создателя объекта: ");
+                Organisation = Console.ReadLine();
             }
 
             public override string ToString()
@@ -158,20 +169,31 @@ namespace Lab_4
                 Day = date.Day;
                 Month = date.Month;
                 Year = date.Year;
+            }
 
+            public override string ToString()
+            {
+                return $"Дата создания объекта\n{Day}.{Month}.{Year} ";
+            }
+
+            public static explicit operator Date(Set obj)
+            {
+                return obj.SetDate;
             }
         }
+
+
     }
+
 
     static class StaticOperation
     {
         public static int FirstNum(this String str)
         {
             string[] elements = str.Split(' ');
-            int res;
             for (int i = 0; i < elements.Length; i++)
             {
-                if (Int32.TryParse(elements[i], out res)) return Convert.ToInt32(elements[i]);
+                if (Int32.TryParse(elements[i], out _)) return Convert.ToInt32(elements[i]);
                 else continue;
             }
             return 0;

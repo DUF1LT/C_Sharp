@@ -131,8 +131,11 @@ namespace Lab_4
             Set crossedSet = firstSet * secondSet;
             crossedSet.ShowSet();
 
-            Set.Owner firstsetOwner = new Set.Owner("124124", "Vadim", "BSTU");
-            firstsetOwner.ToString();   
+            firstSet.SetOwner.ToString();
+            firstSet.SetDate.ToString();
+
+            
+
 
 
         }
