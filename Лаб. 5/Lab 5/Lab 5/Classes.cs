@@ -12,19 +12,19 @@ namespace Lab_5
 
     interface IAdvertisement
     {
-        void ShowAd()
+        public void ShowAd()
         {
             Console.WriteLine("~~Реклама~~");
         }
 
-        void GetMoney()
+        public void GetMoney()
         {
             Console.WriteLine("~~Получены деньги с рекламы~~");
         }
     }
 
 
-    public abstract class TVProgram
+    public abstract class TVProgram : IAdvertisement
     {
         protected string name;
         protected int duration;
@@ -51,6 +51,11 @@ namespace Lab_5
             }
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + " " + name + " " + duration + " " + description;
+        }
+
         public virtual void VolumeUp() 
         {
             Console.WriteLine("Громкость увеличена");
@@ -62,10 +67,10 @@ namespace Lab_5
 
         public abstract void TurnOn();
         public abstract void TurnOff();
-       
+
     }
 
-    public abstract class Film : TVProgram, IAdvertisement
+    public abstract class Film : TVProgram, IAdvertisement, IDirector
     {
         protected int ageLimit;
         protected string releaseDate;
@@ -74,8 +79,26 @@ namespace Lab_5
         {
             Console.WriteLine("Фильм срежесирован Вадимом");
         }
- 
+        
+        void IDirector.Credits()
+        {
+            Console.WriteLine("Directed by someone");
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " " + ageLimit + " " + releaseDate;
+        }
         public abstract void Credits();
+        public void ShowAd()
+        {
+            Console.WriteLine("~~Реклама~~");
+        }
+
+        public void GetMoney()
+        {
+            Console.WriteLine("~~Получены деньги с рекламы~~");
+        }
     }
 
     public sealed class News : TVProgram, IAdvertisement
@@ -107,8 +130,10 @@ namespace Lab_5
 
         public override string ToString()
         {
-            return base.ToString() + name + " " + duration + " " + description + " " + Country + " ";
+            return base.ToString() + " " + Country;
         }
+
+
     }
 
     public class FeatureFilm : Film, IDirector
@@ -142,13 +167,18 @@ namespace Lab_5
         {
             Console.WriteLine("~~Титры к худ. фильму~~");
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + " " + Actor;
+        }
     }
 
-    public class Сartoon : Film, IDirector
+    public class Cartoon : Film, IDirector
     {
         public string MainCharacter { get; }
 
-        public Сartoon(string name, int duration, string description, int ageLimit, string releaseDate, string mainCharacter)
+        public Cartoon(string name, int duration, string description, int ageLimit, string releaseDate, string mainCharacter)
         {
             this.name = name;
             this.duration = duration;
@@ -175,6 +205,19 @@ namespace Lab_5
         public override void Credits()
         {
             Console.WriteLine("~~Титры к мультфильму~~");
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " " + MainCharacter;
+        }
+    }
+
+    class Printer
+    {
+        public void IAmPrinting(object someObj)
+        {
+            Console.WriteLine(someObj.ToString());
         }
     }
 }
