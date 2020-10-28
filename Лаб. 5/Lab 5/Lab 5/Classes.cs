@@ -4,12 +4,29 @@ using System.Text;
 
 namespace Lab_5
 {
+
+    public enum Month
+    {
+        January = 1, February, March, April, May, June, July, August, September, October, November, December 
+    }
+
+    public struct ReleaseDate
+    {
+        public int day;
+        public int month;
+        public int year;
+        public string GetDate()
+        {
+            return day + "." + month + "." + year;
+        }
+    }
     interface IDirector
     {
         void Direct();
         void Credits();
     }
 
+    
     interface IAdvertisement
     {
         public void ShowAd()
@@ -73,7 +90,7 @@ namespace Lab_5
     public abstract class Film : TVProgram, IAdvertisement, IDirector
     {
         protected int ageLimit;
-        protected string releaseDate;
+        protected int adAmount;
 
         public void Direct()
         {
@@ -87,17 +104,18 @@ namespace Lab_5
 
         public override string ToString()
         {
-            return base.ToString() + " " + ageLimit + " " + releaseDate;
+            return base.ToString() + " " + ageLimit + " ";
         }
         public abstract void Credits();
         public void ShowAd()
         {
+            adAmount++;
             Console.WriteLine("~~Реклама~~");
         }
 
         public void GetMoney()
         {
-            Console.WriteLine("~~Получены деньги с рекламы~~");
+            Console.WriteLine($"~~Получены деньги с показанных {adAmount} реклам(ы)~~");
         }
     }
 
@@ -139,14 +157,92 @@ namespace Lab_5
     public class FeatureFilm : Film, IDirector
     {
         public string Actor { get; }
-
+        public readonly ReleaseDate relDate;
+        
+        
         public FeatureFilm(string name, int duration, string description, int ageLimit, string releaseDate, string actor)
         {
+            relDate = new ReleaseDate();
+            GetDate(out relDate.day, out relDate.month, out relDate.year);
+            void GetDate(out int _day, out int _month, out int _year)
+            {
+                
+                string[] date = releaseDate.Split(".");
+                _day = Convert.ToInt32(date[0]);
+                switch(Convert.ToInt32(date[1]))
+                {
+                    case 1:
+                        {
+                            _month = (int)Month.January;
+                            break;
+                        }
+                    case 2:
+                        {
+                            _month = (int)Month.February;
+                            break;
+                        }
+                    case 3:
+                        {
+                            _month = (int)Month.March;
+                            break;
+                        }
+                    case 4:
+                        {
+                            _month = (int)Month.April;
+                            break;
+                        }
+                    case 5:
+                        {
+                            _month = (int)Month.May;
+                            break;
+                        }
+                    case 6:
+                        {
+                            _month = (int)Month.June;
+                            break;
+                        }
+                    case 7:
+                        {
+                            _month = (int)Month.July;
+                            break;
+                        }
+                    case 8:
+                        {
+                            _month = (int)Month.August;
+                            break;
+                        }
+                    case 9:
+                        {
+                            _month = (int)Month.September;
+                            break;
+                        }
+                    case 10:
+                        {
+                            _month = (int)Month.October;
+                            break;
+                        }
+                    case 11:
+                        {
+                            _month = (int)Month.November;
+                            break;
+                        }
+                    case 12:
+                        {
+                            _month = (int)Month.December;
+                            break;
+                        }
+                    default:
+                        _month = 0;
+                        break;
+                }
+                _year = Convert.ToInt32(date[2]);
+            }
+            
             this.name = name;
             this.duration = duration;
             this.description = description;
             this.ageLimit = ageLimit;
-            this.releaseDate = releaseDate;
+            adAmount = 0;
             Actor = actor;
         }
         public override void TurnOn()
@@ -158,7 +254,6 @@ namespace Lab_5
         {
             Console.WriteLine("Художественный фильм выключен");
         }
-
         void IDirector.Credits()
         {
             Console.WriteLine("directed by robert b weide");
@@ -170,21 +265,96 @@ namespace Lab_5
 
         public override string ToString()
         {
-            return base.ToString() + " " + Actor;
+            return base.ToString() + relDate.GetDate() + " " + Actor;
         }
     }
 
     public class Cartoon : Film, IDirector
     {
         public string MainCharacter { get; }
+        public readonly ReleaseDate relDate;
 
         public Cartoon(string name, int duration, string description, int ageLimit, string releaseDate, string mainCharacter)
         {
+            relDate = new ReleaseDate();
+            GetDate(out relDate.day, out relDate.month, out relDate.year);
+            void GetDate(out int _day, out int _month, out int _year)
+            {
+
+                string[] date = releaseDate.Split(".");
+                _day = Convert.ToInt32(date[0]);
+                switch (Convert.ToInt32(date[1]))
+                {
+                    case 1:
+                        {
+                            _month = (int)Month.January;
+                            break;
+                        }
+                    case 2:
+                        {
+                            _month = (int)Month.February;
+                            break;
+                        }
+                    case 3:
+                        {
+                            _month = (int)Month.March;
+                            break;
+                        }
+                    case 4:
+                        {
+                            _month = (int)Month.April;
+                            break;
+                        }
+                    case 5:
+                        {
+                            _month = (int)Month.May;
+                            break;
+                        }
+                    case 6:
+                        {
+                            _month = (int)Month.June;
+                            break;
+                        }
+                    case 7:
+                        {
+                            _month = (int)Month.July;
+                            break;
+                        }
+                    case 8:
+                        {
+                            _month = (int)Month.August;
+                            break;
+                        }
+                    case 9:
+                        {
+                            _month = (int)Month.September;
+                            break;
+                        }
+                    case 10:
+                        {
+                            _month = (int)Month.October;
+                            break;
+                        }
+                    case 11:
+                        {
+                            _month = (int)Month.November;
+                            break;
+                        }
+                    case 12:
+                        {
+                            _month = (int)Month.December;
+                            break;
+                        }
+                    default:
+                        _month = 0;
+                        break;
+                }
+                _year = Convert.ToInt32(date[2]);
+            }
             this.name = name;
             this.duration = duration;
             this.description = description;
             this.ageLimit = ageLimit;
-            this.releaseDate = releaseDate;
             MainCharacter = mainCharacter;
         }
 
@@ -209,7 +379,7 @@ namespace Lab_5
 
         public override string ToString()
         {
-            return base.ToString() + " " + MainCharacter;
+            return base.ToString() + relDate.GetDate() + " " + MainCharacter;
         }
     }
 

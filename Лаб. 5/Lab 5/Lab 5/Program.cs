@@ -9,6 +9,7 @@ namespace Lab_5
             News newsObj = new News("Russia Today", 70, "Новости о России сегодня", "Россия");
             FeatureFilm ffObj = new FeatureFilm("Interstellar", 250, "Фильм про космос и черные дыры", 16, "26.10.2014", "Matthew MacConaughey");
             Cartoon cartObj = new Cartoon("The Incredibles", 116, "Фильм про суперсемейку", 5, "5.11.2004", "Mr. Incredible");
+            Cartoon cartObj2 = new Cartoon("The Incredibles", 116, "Фильм про суперсемейку", 5, "5.11.2004", "Mr. Incredible");
 
             newsObj.TurnOn();
             newsObj.VolumeUp();
@@ -27,6 +28,8 @@ namespace Lab_5
             ffObj.Direct();
             ffObj.ShowAd();
             cartObj.ShowAd();
+            cartObj.ShowAd();
+
             Printer prt = new Printer();
             TVProgram[] array = new TVProgram[] {cartObj, newsObj, ffObj};
             foreach(var el in array)
@@ -34,6 +37,15 @@ namespace Lab_5
                 prt.IAmPrinting(el);
                 Console.WriteLine();
             }
+
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~Лабораторная 6~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            Console.WriteLine(cartObj.relDate.GetDate());
+            ProgramGuide pg = new ProgramGuide();
+            pg.AddProgram(cartObj);
+            pg.AddProgram(ffObj);
+            pg.AddProgram(cartObj2);
+            Controler.FindSameYear(pg, 2004);
+
         }
 
     }
