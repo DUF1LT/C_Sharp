@@ -9,7 +9,7 @@ namespace Lab_5
             News newsObj = new News("Russia Today", 70, "Новости о России сегодня", "Россия");
             FeatureFilm ffObj = new FeatureFilm("Interstellar", 250, "Фильм про космос и черные дыры", 16, "26.10.2014", "Matthew MacConaughey");
             Cartoon cartObj = new Cartoon("The Incredibles", 116, "Фильм про суперсемейку", 5, "5.11.2004", "Mr. Incredible");
-            Cartoon cartObj2 = new Cartoon("The Incredibles", 116, "Фильм про суперсемейку", 5, "5.11.2004", "Mr. Incredible");
+            Cartoon cartObj2 = new Cartoon("Shrek 2", 105, "Фильм про огра", 5, "19.5.2004", "Shrek");
 
             newsObj.TurnOn();
             newsObj.VolumeUp();
@@ -44,7 +44,10 @@ namespace Lab_5
             pg.AddProgram(cartObj);
             pg.AddProgram(ffObj);
             pg.AddProgram(cartObj2);
-            Controler.FindSameYear(pg, 2004);
+            pg.ShowProgramGuide();
+            ProgramGuideControler.FindSameYear(pg, 2004);
+            ProgramGuideControler.ProgramGuideDuration(pg);
+            ProgramGuideControler.ProgramGuideAdAmount(pg);
 
         }
 

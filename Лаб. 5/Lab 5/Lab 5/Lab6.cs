@@ -43,24 +43,49 @@ namespace Lab_5
         }
     }
 
-    static class Controler
+    static class ProgramGuideControler
     {
         public static void FindSameYear(ProgramGuide pgObj, int year)
         {
-            Console.WriteLine($"Фильмы вышедшие в веденном году ({year})");
+            Console.WriteLine($"\nФильмы вышедшие в веденном году ({year})");
             for(int i = 0; i < pgObj.GetListLength(); i++ )
             {
                 if (pgObj[i] is FeatureFilm)
                 {
                     if(((FeatureFilm)pgObj[i]).relDate.year == year)
                         Console.WriteLine(((FeatureFilm)pgObj[i]).ToString());
+                    continue;
                 }
                 if (pgObj[i] is Cartoon)
                 {
                     if (((Cartoon)pgObj[i]).relDate.year == year)
                         Console.WriteLine(((Cartoon)pgObj[i]).ToString());
+                    continue;
+
                 }
             }
+        }
+
+        public static void ProgramGuideDuration(ProgramGuide pgObj)
+        {
+            int finalDuration = 0;
+            for (int i = 0; i < pgObj.GetListLength(); i++)
+            {
+                finalDuration += pgObj[i].Duration;
+            }
+            Console.WriteLine($"Продолжительность программы передач: {finalDuration}");
+
+        }
+
+        public static void ProgramGuideAdAmount(ProgramGuide pgObj)
+        {
+            int adAmount = 0;
+            for (int i = 0; i < pgObj.GetListLength(); i++)
+            {
+                adAmount += pgObj[i].GetAdAmount();
+            }
+            Console.WriteLine($"Количество показанной рекламы: {adAmount}");
+
         }
     }
 }

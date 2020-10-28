@@ -117,6 +117,10 @@ namespace Lab_5
         {
             Console.WriteLine($"~~Получены деньги с показанных {adAmount} реклам(ы)~~");
         }
+        public int GetAdAmount()
+        {
+            return adAmount;
+        }
     }
 
     public sealed class News : TVProgram, IAdvertisement
@@ -150,7 +154,7 @@ namespace Lab_5
         {
             return base.ToString() + " " + Country;
         }
-
+       
 
     }
 
@@ -267,6 +271,7 @@ namespace Lab_5
         {
             return base.ToString() + relDate.GetDate() + " " + Actor;
         }
+       
     }
 
     public class Cartoon : Film, IDirector
@@ -381,6 +386,7 @@ namespace Lab_5
         {
             return base.ToString() + relDate.GetDate() + " " + MainCharacter;
         }
+        
     }
 
     class Printer
