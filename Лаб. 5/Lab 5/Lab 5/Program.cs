@@ -1,5 +1,6 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using Newtonsoft.Json;
 namespace Lab_5
 {
     class Program
@@ -48,6 +49,22 @@ namespace Lab_5
             ProgramGuideControler.FindSameYear(pg, 2004);
             ProgramGuideControler.ProgramGuideDuration(pg);
             ProgramGuideControler.ProgramGuideAdAmount(pg);
+            Console.WriteLine();
+
+            //Чтение текстового файла
+            string path = @"D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 6\lab6.txt";
+            List<FeatureFilm> newCollection = ProgramGuideControler.ReadFile(path);
+            foreach (var el in newCollection)
+            {
+                Console.WriteLine(el.ToString()+ "\n|\nV");
+            }
+            //Чтение json файла
+            string path2 = @"D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 6\lab6json.txt";
+            newCollection = ProgramGuideControler.ReadJson(path2);
+            foreach (var el in newCollection)
+            {
+                Console.WriteLine(el.ToString() + "\n|\nV");
+            }
 
         }
 

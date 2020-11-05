@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace Lab_5
 {
@@ -87,7 +88,7 @@ namespace Lab_5
 
     }
 
-    public abstract class Film : TVProgram, IAdvertisement, IDirector
+    public abstract class Film : TVProgram, IAdvertisement
     {
         protected int ageLimit;
         protected int adAmount;
@@ -97,10 +98,6 @@ namespace Lab_5
             Console.WriteLine("Фильм срежесирован Вадимом");
         }
         
-        void IDirector.Credits()
-        {
-            Console.WriteLine("Directed by someone");
-        }
 
         public override string ToString()
         {
@@ -396,4 +393,5 @@ namespace Lab_5
             Console.WriteLine(someObj.ToString());
         }
     }
+
 }

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace Lab_5
 {
@@ -35,7 +38,7 @@ namespace Lab_5
 
         public void ShowProgramGuide()
         {
-            foreach(var el in pgList)
+            foreach (var el in pgList)
             {
                 Console.WriteLine(el.ToString());
                 Console.WriteLine("|");
@@ -48,11 +51,11 @@ namespace Lab_5
         public static void FindSameYear(ProgramGuide pgObj, int year)
         {
             Console.WriteLine($"\nФильмы вышедшие в веденном году ({year})");
-            for(int i = 0; i < pgObj.GetListLength(); i++ )
+            for (int i = 0; i < pgObj.GetListLength(); i++)
             {
                 if (pgObj[i] is FeatureFilm)
                 {
-                    if(((FeatureFilm)pgObj[i]).relDate.year == year)
+                    if (((FeatureFilm)pgObj[i]).relDate.year == year)
                         Console.WriteLine(((FeatureFilm)pgObj[i]).ToString());
                     continue;
                 }
@@ -87,5 +90,50 @@ namespace Lab_5
             Console.WriteLine($"Количество показанной рекламы: {adAmount}");
 
         }
+
+        public static List<FeatureFilm> ReadFile(string path)
+        {
+            List<FeatureFilm> newCollection = new List<FeatureFilm>();
+            try
+            {
+
+                using (StreamReader strRead = new StreamReader(path))
+                {
+                    while (!strRead.EndOfStream)
+                    {
+                        string[] newObjElements = strRead.ReadLine().Split("|");
+                        FeatureFilm newObj = new FeatureFilm(newObjElements[0], Convert.ToInt32(newObjElements[1]), newObjElements[2], Convert.ToInt32(newObjElements[3]), newObjElements[4], newObjElements[5]);
+                        newCollection.Add(newObj);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return newCollection;
+        }
+        public static List<FeatureFilm> ReadJson(string path)
+        {
+            List<FeatureFilm> newCollection = new List<FeatureFilm>();
+            try
+            {
+                using (StreamReader strRead = new StreamReader(path))
+                {
+                    var reader = new JsonTextReader(new StreamReader(path));
+                    JsonSerializer serializer = new JsonSerializer {CheckAdditionalContent = true };
+                    while (!strRead.EndOfStream)
+                    {
+                        newCollection.Add((FeatureFilm)serializer.Deserialize(reader, typeof(FeatureFilm)));
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return newCollection;
+        }
     }
 }
+
