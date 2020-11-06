@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.IO;
+using System.Diagnostics;
+
 namespace Lab_5
 {
     class Program
@@ -40,6 +43,7 @@ namespace Lab_5
             }
 
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~Лабораторная 6~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            Logger logger = new Logger();
             Console.WriteLine(cartObj.relDate.GetDate());
             ProgramGuide pg = new ProgramGuide();
             pg.AddProgram(cartObj);
@@ -59,13 +63,70 @@ namespace Lab_5
                 Console.WriteLine(el.ToString()+ "\n|\nV");
             }
             //Чтение json файла
+            
             string path2 = @"D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 6\lab6json.txt";
-            newCollection = ProgramGuideControler.ReadJson(path2);
-            foreach (var el in newCollection)
+            try
             {
-                Console.WriteLine(el.ToString() + "\n|\nV");
+                newCollection = ProgramGuideControler.ReadJson(path2);
+                foreach (var el in newCollection)
+                {
+                    Console.WriteLine(el.ToString() + "\n|\nV");
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                logger.AddLog(e);
             }
 
+            ///////////////////////////////Лаб. 7////////////////////////
+
+            int[] arrayExc = new int[5] { 1, 2, 3, 4, 5 };
+            Console.WriteLine("Введите элемент массива, к которому хотите получить доступ");
+            int index;
+            try
+            {
+                if (!Int32.TryParse(Console.ReadLine(), out index))
+                    throw new WrongInputException("Введен не целое число!");
+                try
+                {
+                    if (index >= arrayExc.Length && index <= 0)
+                        throw new IndexOutOfRangeException("Введен неверный индекс!");
+                    Console.WriteLine(arrayExc[index]);
+                }
+                catch(IndexOutOfRangeException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    logger.AddLog(ex);
+
+                }
+            }
+            catch (WrongInputException e)
+            {
+                Console.WriteLine(e.Message);
+                logger.AddLog(e);
+
+            }
+
+            Console.WriteLine("Введите делимое и делитель, чтобы произвести деление");
+            int firstInt = Convert.ToInt32(Console.ReadLine());
+            int secondInt = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+                if (secondInt == 0)
+                    throw new DivideByZeroException("Делитель не должен быть равен 0!");
+                Console.WriteLine(firstInt/secondInt);
+            }
+            catch(DivideByZeroException ex)
+            {
+                Console.WriteLine(ex.Message);
+                logger.AddLog(ex);
+
+            }
+            Console.WriteLine(logger.ToString());
+            string path3 = @"D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 6\log.txt";
+            logger.ToFile(path3);
+            Debug.Assert(false, "Конец программы");
         }
 
     }

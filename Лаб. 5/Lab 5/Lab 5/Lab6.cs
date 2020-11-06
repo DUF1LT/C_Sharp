@@ -128,7 +128,7 @@ namespace Lab_5
                     }
                 }
             }
-            catch (Exception e)
+            catch (FileLoadException e)
             {
                 Console.WriteLine(e.Message);
             }
