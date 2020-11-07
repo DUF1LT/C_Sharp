@@ -1,0 +1,15 @@
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\bin\Debug\netcoreapp3.1\Lab 8.exe
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\obj\Debug\netcoreapp3.1\Lab 8.csprojAssemblyReference.cache
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\obj\Debug\netcoreapp3.1\Lab 8.AssemblyInfoInputs.cache
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\obj\Debug\netcoreapp3.1\Lab 8.AssemblyInfo.cs
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\obj\Debug\netcoreapp3.1\Lab 8.csproj.CoreCompileInputs.cache
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\bin\Debug\netcoreapp3.1\Lab 8.deps.json
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\bin\Debug\netcoreapp3.1\Lab 8.runtimeconfig.json
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\bin\Debug\netcoreapp3.1\Lab 8.runtimeconfig.dev.json
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\bin\Debug\netcoreapp3.1\Lab 8.dll
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\bin\Debug\netcoreapp3.1\Lab 8.pdb
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\obj\Debug\netcoreapp3.1\Lab 8.csproj.CopyComplete
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\obj\Debug\netcoreapp3.1\Lab 8.dll
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\obj\Debug\netcoreapp3.1\Lab 8.pdb
+D:\BSTU stuff\3 семестр 2 курс\ООП\C_Sharp\Лаб. 8\Lab 8\Lab 8\obj\Debug\netcoreapp3.1\Lab 8.genruntimeconfig.cache

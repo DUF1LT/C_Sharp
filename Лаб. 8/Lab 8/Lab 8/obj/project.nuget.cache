@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "kIykP/mqMG0sP/UPRqhOEmiG0iCpeB+HLlN6F6YjBKi6DrfYSZ3c8e2AONel7RRTNCD8CBe5fqA/xA7Xeh2Z5Q==",
+  "success": true,
+  "projectFilePath": "D:\\BSTU stuff\\3 семестр 2 курс\\ООП\\C_Sharp\\Лаб. 8\\Lab 8\\Lab 8\\Lab 8.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vadim\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
